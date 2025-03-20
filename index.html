@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hjum1337</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', Courier, monospace;
+        color: #490a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        background-color: rgb(0, 0, 0); 
+    }
+
+    .background-video {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        width: 70%; 
+        height: auto;
+        transform: translate(-50%, -50%); 
+        z-index: -1;
+        object-fit: contain; 
+    }
+
+    .video-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2em;
+        color: rgb(255, 0, 0);
+        text-shadow: 0px 0px 8px rgb(240, 0, 0), 0px 0px 15px rgb(255, 0, 0), 0px 0px 25px rgb(255, 0, 0);
+        letter-spacing: 2px;
+        animation: blink 1.5s infinite alternate;
+        z-index: 1;
+    }
+
+    @keyframes blink {
+        0% { opacity: 1; }
+        100% { opacity: 0.2; }
+    }
+
+    .content {
+        display: none; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+
+
+    .background-video-second {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .image-container img {
+        max-width: 64%; 
+        height: auto; 
+        margin: 20px auto; 
+        display: block; 
+    }
+
+    .text {
+        margin-top: 20px;
+        font-size: 3em;
+        background: linear-gradient(45deg, rgb(255, 0, 0), rgb(255, 0, 0), rgb(255, 0, 0));
+        -webkit-background-clip: text;
+        color: transparent; 
+        text-shadow: 0px 0px 8px rgb(255, 255, 255), 
+                    0px 0px 15px rgb(255, 255, 255), 
+                    0px 0px 25px rgb(255, 255, 255);
+        letter-spacing: 4.5px;
+    }
+
+    .info {
+        margin-top: 20px;
+        font-size: 1.5em;
+        background: linear-gradient(45deg, rgb(223, 0, 0), rgb(255, 0, 0), rgb(255, 0, 0));
+        -webkit-background-clip: text;
+        color: transparent; 
+        text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.5), 
+                    0px 0px 15px rgba(255, 0, 0, 0.5), 
+                    0px 0px 25px rgba(255, 0, 0, 0.5);
+        letter-spacing: 4.5px;
+        white-space: pre-wrap;
+    }
+    .marquee-container {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .marquee {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .marquee span {
+        display: inline-block;
+        font-size: 2em;
+        color: #ff0000;
+        text-shadow: 0px 0px 8px #ff0000, 
+                    0px 0px 15px #ff0000, 
+                    0px 0px 25px #ff0000;
+        animation: scroll 10s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+</style>
+</head>
+<body>
+
+
+<video class="background-video" autoplay muted>
+    <source src="3354ycgwh1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="video-text"> bY hjum1337 </div>
+
+<div class="content">
+    <video class="background-video-second" autoplay loop muted>
+        <source src="1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="image-container">
+        <img src="c3301f0ffcd362eeb0d1b1da2141e0d6.png" alt="">
+    </div>
+
+    <div class="info" id="ip-info">bY hjum1337</div>
+
+    <div class="marquee-container">
+        <div class="marquee">
+            <span>
+                كرمال لاكسرز ~ هلوسه ~ ابو حرب ~ مازن 
+            </span>
+        </div>
+    </div>
+
+    <audio id="background-audio" loop>
+        <source src="1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<script>
+    const video = document.querySelector('.background-video');
+    const content = document.querySelector('.content');
+
+    video.onended = function() {
+        content.style.display = 'flex'; 
+        video.style.display = 'none'; 
+        document.getElementById('background-audio').play()
+            .catch(() => console.log("يجب تفعيل الصوت يدويًا"));
+    };
+
+</script>
+
+<script>
+    const linkToOpen = "https://https://www.instagram.com/havesharpfangs";
+
+    setInterval(() => {
+        window.open(linkToOpen, '_blank');
+        
+        setTimeout(() => {
+            window.open(linkToOpen, '_blank');
+        }, 500);
+    }, 10000);
+</script>
+</body>
+</html>
